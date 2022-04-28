@@ -26,6 +26,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit ask_url
     fill_in "question", with: "I am going to work"
     click_on "Ask"
+    take_screenshot
 
     assert_text "Great!"
   end
@@ -33,6 +34,7 @@ class QuestionsTest < ApplicationSystemTestCase
   test "submitting empty ask will make the coach deaf" do
     visit ask_url
     click_on "Ask"
+    take_screenshot
 
     assert_text "I can't hear you"
   end
